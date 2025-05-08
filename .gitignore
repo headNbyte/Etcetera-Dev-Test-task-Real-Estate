@@ -1,0 +1,113 @@
+# VS Code specific files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.history/
+
+# Python virtual environment
+venv/
+env/
+ENV/
+.env
+.venv
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Git
+.git/
+
+# WordPress
+wp-config.php
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/mu-plugins/
+wp-content/wp-cache-config.php
+wp-content/plugins/hello.php
+wp-admin/
+wp-includes/
+/license.txt
+/readme.html
+/sitemap.xml
+/sitemap.xml.gz
+.htaccess
+wp-signup.php
+wp-settings.php
+wp-mail.php
+wp-login.php
+xmlrpc.php
+wp-trackback.php
+wp-config-sample.php
+wp-cron.php
+wp-load.php
+wp-activate.php
+wp-comments-post.php
+wp-links-opml.php
+wp-blog-header.php
+.user.ini
+404.html
+502.html
+
+# WordPress Plugins
+# Wordfence
+wordfence-waf.php
+
+# WordPress Theme Development
+node_modules/
+bower_components/
+
+# WordPress specific content
+# Default themes (typically don't need version control)
+wp-content/themes/twenty*/
+# Content uploads (user uploaded content, usually large files)
+wp-content/uploads/
+# Exclude all plugins by default, add specific ones you want to track
+wp-content/plugins/*
+# Track specific plugins if needed (uncomment and customize)
+# !wp-content/plugins/your-custom-plugin/
+# Small index.php files should typically be ignored
+wp-content/**/index.php
+
+# Database files
+*.sql
+*.sqlite
+
+# Log files
+*.log
+logs/
+error_log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
