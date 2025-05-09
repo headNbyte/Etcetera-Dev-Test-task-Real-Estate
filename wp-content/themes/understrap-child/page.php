@@ -1,0 +1,80 @@
+<?php
+/**
+ * The template for displaying all pages
+ *
+ * @package Understrap-child
+ */
+
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+get_header();
+$container = get_theme_mod( 'understrap_container_type' );
+?>
+
+<div class="wrapper" id="page-wrapper">
+
+	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+
+		<div class="row">
+
+			<main class="site-main" id="main">
+
+				<?php
+				while ( have_posts() ) {
+					the_post();
+					?>
+					<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+
+						<header class="entry-header">
+							<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+						</header><!-- .entry-header -->
+
+						<?php
+						// Display featured image if available
+						if ( has_post_thumbnail() ) {
+							echo '<div class="entry-featured-image">';
+							the_post_thumbnail( 'large' );
+							echo '</div>';
+						}
+						?>
+
+						<div class="entry-content">
+							<?php the_content(); ?>
+
+							<?php
+							wp_link_pages(
+								array(
+									'before' => '<div class="page-links">' . __( 'Pages:', 'understrap-child' ),
+									'after'  => '</div>',
+								)
+							);
+							?>
+						</div><!-- .entry-content -->
+
+						<footer class="entry-footer">
+							<?php edit_post_link( __( 'Edit', 'understrap-child' ), '<span class="edit-link">', '</span>' ); ?>
+						</footer><!-- .entry-footer -->
+
+					</article><!-- #post-## -->
+
+					<?php
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) {
+						comments_template();
+					}
+				}
+				?>
+
+			</main><!-- #main -->
+
+			<?php get_sidebar(); ?>
+
+		</div><!-- .row -->
+
+	</div><!-- #content -->
+
+</div><!-- #page-wrapper -->
+
+<?php
+get_footer();

@@ -1,5 +1,6 @@
 # VS Code specific files
 .vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -91,6 +92,8 @@ wp-content/uploads/
 wp-content/plugins/*
 # Track specific plugins if needed (uncomment and customize)
 # !wp-content/plugins/your-custom-plugin/
+!wp-content/plugins/real-estate-objects
+!wp-content/plugins/simple-svg-upload
 # Small index.php files should typically be ignored
 wp-content/**/index.php
 
@@ -111,3 +114,6 @@ error_log
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+
+.well-known/

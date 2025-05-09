@@ -1,0 +1,818 @@
+/*
+Theme Name: Understrap Child
+Theme URI: https://understrap.com
+Author: Ihor Nemyrovskyi
+Author URI:
+Template: understrap
+GitHub Theme URI: https://github.com/understrap/understrap
+Description: Real Estate Objects Theme
+Version: 1.2.4
+Requires at least: 5.0
+Tested up to: 6.1
+Requires PHP: 5.2
+License: GNU General Public License v3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: understrap-child
+Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, translation-ready, block-styles, wide-blocks, editor-style, threaded-comments, accessibility-ready
+
+Understrap WordPress Theme, (C) 2021 Howard Development & Consulting, LLC
+Understrap is distributed under the terms of the GNU GPL.
+
+Resource Licenses:
+Understrap is based on Underscores https://underscores.me/, (C) Automattic, Inc.
+Font Awesome: https://fontawesome.com/v4.7/license/ (Font: SIL OFL 1.1, (S)CSS: MIT)
+Bootstrap: https://getbootstrap.com | https://github.com/twbs/bootstrap/blob/master/LICENSE (MIT)
+WP Bootstrap Navwalker by Edward McIntyre & William Patton: https://github.com/twittem/wp-bootstrap-navwalker (GNU GPLv3)
+*/
+
+/*
+Do not modify the parent Understrap theme. Instead, download a copy of the Understrap Child starter theme and do all your development within the child theme.
+Full developer documentation: https://docs.understrap.com
+*/
+
+/* General site styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header and menu styling */
+#wrapper-navbar {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+/* Front page post styling */
+.latest-posts article {
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.latest-posts article:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.latest-posts .entry-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.latest-posts .entry-title a {
+    color: #333;
+    text-decoration: none;
+}
+
+.latest-posts .entry-title a:hover {
+    color: #007bff;
+}
+
+.latest-posts .entry-meta {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.latest-posts .entry-content {
+    margin-top: 0.5rem;
+}
+
+/* Sidebar styling */
+.sidebar .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgba(0,0,0,0.125);
+}
+
+/* Real estate filter styling */
+.real-estate-filter {
+    margin-bottom: 2rem;
+}
+
+.real-estate-filter-form .filter-row {
+    margin-bottom: 1rem;
+}
+
+.real-estate-filter-form .filter-field {
+    margin-bottom: 0.5rem;
+}
+
+.real-estate-filter-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.real-estate-filter-form select,
+.real-estate-filter-form button {
+    width: 100%;
+}
+
+.real-estate-filter-form .filter-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+/* Real estate object styling */
+.real-estate-details {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+}
+
+.real-estate-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.meta-item {
+    padding: 0.5rem;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.building-image {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.building-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.premises {
+    margin-top: 2rem;
+}
+
+.premises-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.premise-item {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.premise-details {
+    margin-bottom: 1rem;
+}
+
+.premise-meta {
+    margin-bottom: 0.5rem;
+}
+
+.premise-image {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.premise-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+}
+
+/* Archive real estate styling */
+.real-estate-archive-item {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.real-estate-archive-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.real-estate-archive-meta {
+    margin: 1rem 0;
+}
+
+.district-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 0.25rem;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+/* Ajax search results styling */
+.results-list {
+    margin-top: 2rem;
+}
+
+.result-item {
+    display: flex;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.result-image {
+    flex: 0 0 30%;
+    margin-right: 1rem;
+}
+
+.result-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+}
+
+.result-content {
+    flex: 1;
+}
+
+.result-meta {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.result-meta .meta-item {
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.result-excerpt {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.view-details {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.view-details:hover {
+    background-color: #0069d9;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Pagination styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.page-numbers {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    margin: 0 0.25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.page-numbers.current {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+}
+
+.page-numbers:hover {
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+    color: #0056b3;
+    text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .real-estate-meta,
+    .premises-list {
+        grid-template-columns: 1fr;
+    }
+
+    .result-item {
+        flex-direction: column;
+    }
+
+    .result-image {
+        flex: 0 0 100%;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Real Estate Objects Styles */
+
+/* Single Real Estate Object */
+.real-estate-details {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.real-estate-meta {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.meta-item {
+    margin-bottom: 0.5rem;
+}
+
+.meta-item:last-child {
+    margin-bottom: 0;
+}
+
+.building-image {
+    margin-bottom: 2rem;
+}
+
+.building-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+}
+
+.premises {
+    margin-bottom: 2rem;
+}
+
+.premises-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.premise-item {
+    flex: 0 0 100%;
+    padding: 15px;
+    margin-bottom: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+}
+
+@media (min-width: 768px) {
+    .premise-item {
+        flex: 0 0 50%;
+    }
+}
+
+.premise-details {
+    margin-bottom: 1rem;
+}
+
+.premise-meta {
+    margin-bottom: 0.5rem;
+}
+
+.premise-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+}
+
+.district-terms {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #dee2e6;
+}
+
+/* Archive Real Estate Objects */
+.real-estate-objects {
+    margin-top: 2rem;
+}
+
+.card-meta p {
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.card-districts {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.card-footer {
+    background-color: transparent;
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+/* Filter Form Customization */
+.real-estate-filter {
+    margin-bottom: 2rem;
+}
+
+.real-estate-filter .filter-button {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.real-estate-filter .filter-button:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.real-estate-filter .view-details {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.real-estate-filter .view-details:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+/* SVG Image Styles */
+.svg-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 300px;
+}
+
+.building-image .svg-image {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #e3e3e3;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.card-img-top.svg-image {
+    height: 200px;
+    object-fit: contain;
+    padding: 15px;
+    background-color: #f5f5f5;
+}
+
+.premise-image .svg-image {
+    max-height: 150px;
+}
+
+/* Fix for SVG in media library */
+.wp-admin .attachment .thumbnail img[src$=".svg"] {
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Ensure SVGs are visible in REST API response */
+.wp-block-image img[src$=".svg"] {
+    width: 100%;
+    height: auto;
+}
+
+/* Active menu item highlighting */
+.navbar-dark .navbar-nav .current-menu-item > a,
+.navbar-dark .navbar-nav .current_page_item > a,
+.navbar-dark .navbar-nav .current-menu-parent > a,
+.navbar-dark .navbar-nav .current_page_parent > a,
+.navbar-dark .navbar-nav .current-menu-ancestor > a,
+.navbar-dark .navbar-nav .current_page_ancestor > a {
+    color: #fff !important;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Add a subtle underline effect */
+.navbar-dark .navbar-nav .current-menu-item > a::after,
+.navbar-dark .navbar-nav .current_page_item > a::after,
+.navbar-dark .navbar-nav .current-menu-parent > a::after,
+.navbar-dark .navbar-nav .current_page_parent > a::after,
+.navbar-dark .navbar-nav .current-menu-ancestor > a::after,
+.navbar-dark .navbar-nav .current_page_ancestor > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem;
+    right: 0.5rem;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 3px 3px 0 0;
+}
+
+/* Also highlight on hover */
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover::after,
+.navbar-dark .navbar-nav .nav-link:focus::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem;
+    right: 0.5rem;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 3px 3px 0 0;
+}
+
+/* Ensure the nav links are positioned relatively for the ::after to work */
+.navbar-dark .navbar-nav .nav-link {
+    position: relative;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.3rem;
+    margin: 0 0.5rem;
+    transition: color 0.2s ease-in-out;
+}
+
+/* Additional menu enhancements */
+.navbar {
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1rem;
+    margin-right: 2rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    padding: 1rem 0.8rem;
+    transition: all 0.3s ease;
+}
+
+/* Add a highlight animation on active menu items */
+@keyframes activeMenuPulse {
+    0% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.7;
+    }
+}
+
+.navbar-dark .navbar-nav .current-menu-item > a::after,
+.navbar-dark .navbar-nav .current_page_item > a::after {
+    animation: activeMenuPulse 2s infinite;
+}
+
+/* Mobile menu enhancements */
+@media (max-width: 767.98px) {
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.95);
+        padding: 1rem;
+        border-radius: 0.25rem;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar-dark .navbar-nav .nav-item:last-child .nav-link {
+        border-bottom: none;
+    }
+
+    .navbar-dark .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .navbar-dark .navbar-toggler:focus {
+        outline: none;
+    }
+}
+
+/* Single Real Estate Object Template Styles */
+.real-estate-single {
+    margin-bottom: 3rem;
+}
+
+.real-estate-header {
+    margin-bottom: 1.5rem;
+}
+
+.real-estate-header .entry-title {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color, #6f42c1);
+}
+
+.building-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.building-image-section {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Control the image size */
+.property-image {
+    max-height: 500px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.building-image-section img {
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.real-estate-details h2 {
+    font-size: 1.8rem;
+    margin: 2rem 0 1.5rem;
+    color: var(--primary-color, #6f42c1);
+    border-bottom: 2px solid var(--secondary-color, #e5e0f0);
+    padding-bottom: 0.5rem;
+}
+
+.real-estate-meta {
+    background-color: #f9f8fd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 0 auto 2rem;
+    max-width: 900px;
+}
+
+.real-estate-info-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0 auto;
+}
+
+.real-estate-info-table th,
+.real-estate-info-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.real-estate-info-table th {
+    background-color: #f3f0fa;
+    font-weight: 600;
+    color: #444;
+    width: 40%;
+}
+
+.real-estate-info-table tr:last-child th,
+.real-estate-info-table tr:last-child td {
+    border-bottom: none;
+}
+
+.real-estate-info-table a {
+    color: var(--primary-color, #6f42c1);
+    text-decoration: none;
+}
+
+.real-estate-info-table a:hover {
+    text-decoration: underline;
+}
+
+.premises {
+    margin: 3rem auto;
+    max-width: 900px;
+}
+
+.premises-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin: 1.5rem auto;
+}
+
+.premise-item {
+    margin-bottom: 0;
+    padding: 1.5rem;
+    background-color: #fcfcfe;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.premise-info-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.premise-info-table th,
+.premise-info-table td {
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.premise-info-table th {
+    font-weight: 600;
+    color: #555;
+    width: 50%;
+}
+
+.premise-info-table tr:last-child th,
+.premise-info-table tr:last-child td {
+    border-bottom: none;
+}
+
+.district-terms {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+}
+
+.district-terms a {
+    color: var(--primary-color, #6f42c1);
+    text-decoration: none;
+}
+
+.district-terms a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .real-estate-header .entry-title {
+        font-size: 1.8rem;
+    }
+
+    .building-description {
+        font-size: 1rem;
+    }
+
+    .real-estate-details h2 {
+        font-size: 1.5rem;
+    }
+
+    .meta-item {
+        margin-bottom: 1.5rem;
+    }
+
+    .property-image {
+        max-height: 350px;
+    }
+
+    .premises-list {
+        grid-template-columns: 1fr;
+    }
+
+    .real-estate-info-table th,
+    .real-estate-info-table td,
+    .premise-info-table th,
+    .premise-info-table td {
+        padding: 8px 10px;
+    }
+}
+
+/* Attribution styling */
+.attribution {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #666;
+    padding: 1rem 0;
+    border-top: 1px solid #eee;
+}
+
+.attribution a {
+    color: var(--primary-color, #6f42c1);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.attribution a:hover {
+    text-decoration: underline;
+    color: #563d7c;
+}
