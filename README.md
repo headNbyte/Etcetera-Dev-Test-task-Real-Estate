@@ -55,3 +55,5 @@ python create_mock_entries.py http://your-site.com -u admin -p app_password -c 1
 ## Notes
 
 This project was created as part of the Etcetera Dev Test. It demonstrates WordPress plugin development, custom post types, REST API implementation, and testing methodologies.
+
+P.S. The ACF free version does not allow to use repeater field in admin panel, but when using the API the page properly displays the data.
